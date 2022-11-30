@@ -1,0 +1,52 @@
+body {
+  background-color: #000;
+  font-family: sans-serif;
+}
+form {
+  width: 400px;
+  margin: 100px auto;
+  background-image: linear-gradient(
+    45deg,
+    black 40%,
+    rgb(70, 70, 16) 20%,
+    black
+  );
+  color: rgb(163, 163, 27);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 0 inset;
+}
+form > div {
+  margin: 20px 0;
+}
+form input[type="radio"] {
+  appearance: none;
+}
+form label {
+  position: relative;
+  padding-left: 25px;
+}
+form label::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(163, 163, 27);
+  background-color: transparent;
+  border-radius: 2px;
+  left: 0;
+}
+form input[type="radio"]:checked + label::after,
+form input[type="radio"]:not(checked):hover + label::after {
+  content: "";
+  background-color: rgb(163, 163, 27);
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border-radius: 2px;
+}
+form input[type="radio"]:not(:checked):hover + label::after {
+  opacity: 0.5;
+}
